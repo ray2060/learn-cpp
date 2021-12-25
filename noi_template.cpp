@@ -5,6 +5,7 @@
 #include <vector>
 #include <algorithm> // min, max, sort, lower_bound, upper_bound
 #include <utility>   // swap, pair
+#include <typeinfo>
 
 using namespace std;
 
@@ -25,6 +26,18 @@ bool cmp(Stu a, Stu b) {
 }
 
 int main() {
+    int a, b;
+    a = 410;
+    b = 30;
+    double c = a / 100.0 * b;
+    int d = c;
+    
+    printf("%.100f\n", c);
+    printf("%d\n", d);
+    printf("%d\n", (int)(a * b / 100.0));
+    //cout << typeid(a).name() << endl;
+    //cout << typeid(a * 1.0).name() << endl;
+    /*
     cin >> m;
     
     int a, b;
@@ -39,6 +52,7 @@ int main() {
     for (auto it = segs.begin(); it < segs.end(); it ++ ){
         cout << (*it).first;
     }
+    */
     //sort(segs.begin(), segs.end());
     //sort(students, students + m, cmp);
     

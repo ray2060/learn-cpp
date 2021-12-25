@@ -86,24 +86,6 @@ struct high_precision_integer {
         return ans;
     }
     
-    high_precision_integer operator-(const high_precision_integer x) const {
-        int c[MAXD];
-        int len_ans;
-        len_ans = max(len, x.len);
-        high_precision_integer ans;
-        memset(c, 0, MAXD * sizeof(high_precision_integer));
-        ans.read(get_zr(MAXD));
-        ans.len = len_ans;
-        for (int i = 0; i <= len_ans; i ++ ){
-            ans.val[i] = val[i] - x.val[i] - c[i];
-            if (ans.val[i] < 0) {
-                c[i + 1] = 1;
-                ans.val[i] += 10;
-            }
-        }
-        return ans;
-    }
-    
     high_precision_integer operator*(const high_precision_integer x) const {
         int c[MAXD];
         int len_ans;
@@ -133,8 +115,6 @@ int main() {
     high_precision_integer i1, i2;
     i1.read(a);
     i2.read(b);
-    (i1 + i2).output();
-    /*(i1 - i2).output();
-    (i1 * i2).output();*/
+    (i1 * i2).output();
     return 0;
 }
