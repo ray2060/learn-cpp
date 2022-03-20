@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 #include <cstdio>    // freopen
 #include <cstring>   // memset
 #include <cmath>     // abs, fabs, floor, ceil, pow
@@ -6,6 +7,9 @@
 #include <algorithm> // min, max, sort, lower_bound, upper_bound
 #include <utility>   // swap, pair
 #include <typeinfo>
+=======
+#include <bits/stdc++.h>
+>>>>>>> Stashed changes
 
 using namespace std;
 
@@ -44,20 +48,27 @@ int main() {
     for (int i = 0; i < m; i ++ ) {
         cin >> a >> b;
         // vector of pairs
-    	segs.emplace_back({a, b});
+    	//segs.emplace_back(a, b);
         // array of structs
-        // students[i] = {a, b};
+        students[i] = {a, b};
     }
     
-    for (auto it = segs.begin(); it < segs.end(); it ++ ){
-        cout << (*it).first;
+    //for (auto it = segs.begin(); it < segs.end(); it ++ ){
+    //    cout << (*it).first << endl;
+    //}
+    for (int i = 0; i < m; i ++ ) {
+        cout << students[i].id << endl;
     }
+<<<<<<< Updated upstream
     */
+=======
+    
+>>>>>>> Stashed changes
     //sort(segs.begin(), segs.end());
-    //sort(students, students + m, cmp);
+    sort(students, students + m, cmp);
     
     //cout << segs[0].first << endl;
-    // cout << students[0].id << endl;
+    cout << students[0].id << endl;
     
     return 0;
 }
