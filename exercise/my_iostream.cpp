@@ -1,16 +1,18 @@
 #include <iostream>
+#include <cstdio>
 
 using namespace std;
 
-struct test_output {
+struct TO {
     template <class T>
-    test_output operator <<(const T x) {
+    TO operator <<(const T x) {
         cout << x;
-        test_output temp;
+        TO temp;
         return temp;
     }
 };
-test_output tout;
+
+TO tout;
 char newline = '\n';
 
 int main() {
